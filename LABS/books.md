@@ -50,7 +50,7 @@ If you have time, mock out the `post` handler in the mock service worker, so our
 
 ### 1. Create a Feature
 
-In `/src/app/areas` create a feature folder called `books` with a `books.component.ts` and a `books.routes.ts`
+In `/src/app/` create a feature folder called `books` with a `books.component.ts` and a `books.routes.ts`
 
 Create the component and create the routes as in the Counter lab.
 
