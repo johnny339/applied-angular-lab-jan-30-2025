@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ResourcesComponent } from './resources/resources.component';
 import { canMatchFeature } from '@shared';
+import { HomeComponent } from './pages/home.component';
 
 export const routes: Routes = [
   {
@@ -29,5 +30,9 @@ export const routes: Routes = [
     },
     loadChildren: () =>
       import('./jeff-counter/counter.routes').then((r) => r.COUNTER_ROUTES),
+  },
+  {
+    path: '**',
+    component: HomeComponent,
   },
 ];
