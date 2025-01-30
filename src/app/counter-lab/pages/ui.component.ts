@@ -11,22 +11,29 @@ import { CounterStore } from '../services/counter.store';
   selector: 'app-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  template: `<div>
-      <button
-        (click)="store.removeCount()"
-        [disabled]="store.removeCountDisabled()"
-        class="btn btn-primary"
-      >
-        -
-      </button>
-      <span data-testid="current">{{ store.counter() }}</span>
-      <button (click)="store.addCount()" class="btn btn-primary">+</button>
-    </div>
-
-    <div>
-      <p>{{ store.fizzBuzz() }}</p>
-    </div>`,
-  styles: ``,
+  template: `<div class="container">
+    <button
+      (click)="store.removeCount()"
+      [disabled]="store.removeCountDisabled()"
+      class="btn btn-primary"
+    >
+      -
+    </button>
+    <span data-testid="current">{{ store.counter() }}</span>
+    <button (click)="store.addCount()" class="btn btn-primary">+</button>
+    <p style="font-size: large;">{{ store.fizzBuzz() }}</p>
+  </div>`,
+  styles: [
+    `
+      .container {
+        // flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+        text-align: center;
+      }
+    `,
+  ],
 })
 export class UiComponent {
   store = inject(CounterStore);

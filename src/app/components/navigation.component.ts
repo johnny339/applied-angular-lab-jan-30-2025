@@ -110,5 +110,9 @@ export class NavigationComponent {
       href: 'counter-lab',
       text: 'Counter Lab',
     },
+    {
+      href: 'books',
+      text: 'Books',
+    },
   ]);
 }

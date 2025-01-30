@@ -10,7 +10,7 @@ import { CounterStore } from '../services/counter.store';
   selector: 'app-counter-prefs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  template: `<div class="join">
+  template: `<div class="join" class="container">
     <button
       (click)="store.setBy(1)"
       [disabled]="store.by() === 1"
@@ -33,7 +33,15 @@ import { CounterStore } from '../services/counter.store';
       5 Count
     </button>
   </div>`,
-  styles: ``,
+  styles: `
+    .container {
+      // flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+      text-align: center;
+    }
+  `,
 })
 export class PrefComponent {
   store = inject(CounterStore);
